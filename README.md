@@ -43,3 +43,44 @@ git clone https://github.com/AlirezaMoiii/movo-simple-store.git
 cd movo-simple-store
 npm install
 npm run dev
+```
+---
+
+Notes
+
+    This project is for educational and practice purposes.
+
+    Some product images and layout elements are borrowed from Amazon for demonstration only.
+
+    You are welcome to use or improve this project.
+
+📌 TODO
+
+Add full cart functionality
+
+Connect to a product API / backend
+
+Add authentication system
+
+Improve mobile UI responsiveness
+
+Add search and filter functionality
+
+    Deploy the app (Vercel or similar)
+
+🧠 Learnings & Goals
+
+    Practice full-stack development with Next.js
+
+    Improve Tailwind CSS skills
+
+    Learn responsive layout techniques
+
+    Prepare for building real-world e-commerce apps
+
+📄 License
+
+This project is open-source and available under the MIT License.
+📫 Contact
+
+Made with ❤️ by AlirezaMoiii
