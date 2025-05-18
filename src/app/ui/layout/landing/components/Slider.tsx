@@ -71,8 +71,19 @@ export default function Slider() {
           {mobileImgs.map((img) => {
             return (
               <SwiperSlide key={img.name}>
-                <h1 className="absolute text-3xl capitalize p-2 font-bold">{img.title}</h1>
-                <Image src={img.href} width={400} height={375} alt="slide" />
+                <h1 className="absolute text-3xl capitalize p-2 font-bold ">
+                  {img.title}
+                </h1>
+
+                <div className="relative w-full h-[70vh] -z-10">
+                  <Image
+                    src={img.href}
+                    fill
+                    className="object-cover"
+                    alt="slide"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-white"></div>
+                </div>
               </SwiperSlide>
             );
           })}

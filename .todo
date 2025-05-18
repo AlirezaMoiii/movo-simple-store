@@ -1,16 +1,16 @@
 # Landing 
 # mobile version
 
-* BUG slider isn't proper for tablets (More than 400px)
-* Add card drawer
-* make links drawer better
+* BUG slider isn't proper for tablets (More than 400px) ✅
+* Add card drawer ✅
+* make links drawer better ✅
 
 # desktop version
 * fix navbar ui
 
 # Unervsal
-* fix category cards ui. (use shadcn)
+* fix category cards ui. (use shadcn) ✅
 * add links to category cards
-* there is a huge space between cards and footer
+* there is a huge space between cards and footer ✅
 * make footer ui better
-
+ 

@@ -1,10 +1,11 @@
-
 import { siteConfig } from "@/config/site";
 
 import { mainNavLinks } from "./links";
 
 // lucide icons
 import { ShoppingCart, AlignJustify, X } from "lucide-react";
+
+import CardDrawer from "../../common/CardDrawer";
 
 // shadcn
 import {
@@ -38,16 +39,21 @@ function MobileNav() {
               <DrawerDescription>
                 <Input className="mt-2" placeholder="search..." />
 
-                <ul className="mt-4 flex flex-col gap-2">
+                <ul className="mt-8 flex flex-col gap-4">
                   {mainNavLinks.map((link) => {
                     const LinkIcon = link.icon;
                     return (
                       <li
                         key={link.name}
-                        className="text-md font-bold capitalize tracking-wide"
+                        className="text-xl font-bold capitalize tracking-wide"
                       >
-                        <Link href={link.href} className="flex flex-row items-center gap-2">
-                          <span><LinkIcon /></span>
+                        <Link
+                          href={link.href}
+                          className="flex flex-row items-center gap-2"
+                        >
+                          <span>
+                            <LinkIcon />
+                          </span>
                           <span>{link.name}</span>
                         </Link>
                       </li>
@@ -66,8 +72,10 @@ function MobileNav() {
         <Image src={siteConfig.logo} width={100} height={100} alt="movo logo" />
       </div>
 
-      <div className="header-navbar-btn">
-        <ShoppingCart className="header-navbar-icon" />
+      <div>
+        <CardDrawer>
+          <ShoppingCart className="header-navbar-icon" />
+        </CardDrawer>
       </div>
     </div>
   );
