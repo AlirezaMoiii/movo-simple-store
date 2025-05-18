@@ -7,7 +7,7 @@ export const siteConfig = {
   url: "https://example.com",
   social: {
     twitter: "https://twitter.com/example",
-    github: "https://github.com/RealAlirezatrtr2222222/simple-store",
+    github: "https://github.com/AlirezaMoiii/movo-simple-store",
   },
 };
   
