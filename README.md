@@ -32,7 +32,7 @@ This project is a practice implementation of an online store layout, partially i
 
 ## 📸 Screenshots
 
-> *(Coming soon — or you can upload some preview images here)*
+> *(Coming soon)*
 
 ---
 
