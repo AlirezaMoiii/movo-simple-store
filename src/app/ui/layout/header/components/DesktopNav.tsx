@@ -1,7 +1,5 @@
 import { siteConfig } from "@/config/site";
 
-import { mainNavLinks } from "./links";
-
 import { ShoppingCart, Search } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
@@ -22,12 +20,10 @@ import {
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
   navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
 
