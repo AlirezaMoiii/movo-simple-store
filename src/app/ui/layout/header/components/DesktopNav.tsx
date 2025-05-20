@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { ShoppingCart, Search } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // shadcn drawer
 import {
@@ -24,9 +25,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-
 
 import Link from "next/link";
 import Image from "next/image";
@@ -47,7 +47,7 @@ function DesktopNav() {
         {/* links */}
         <NavigationMenu>
           <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
+            <Link href="/" passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Home
               </NavigationMenuLink>
@@ -73,23 +73,30 @@ function DesktopNav() {
         <Search className="absolute top-1/2 -translate-y-1/2 right-1 size-4 text-neutral-500" />
       </div>
 
-      <Drawer direction="right">
-        <DrawerTrigger>
-          {" "}
-          <div className="header-navbar-btn">
-            <ShoppingCart className="header-navbar-icon" />
-          </div>
-        </DrawerTrigger>
-        <DrawerContent>
-          <DrawerHeader>
-            <DrawerTitle>Your shopping card</DrawerTitle>
-            <DrawerDescription>The card is empty.</DrawerDescription>
-          </DrawerHeader>
-          <DrawerFooter>
-            <DrawerClose></DrawerClose>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
+      <div className="flex flex-row items-center gap-4">
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+
+        <Drawer direction="right">
+          <DrawerTrigger>
+            {" "}
+            <div className="header-navbar-btn">
+              <ShoppingCart className="header-navbar-icon" />
+            </div>
+          </DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>Your shopping card</DrawerTitle>
+              <DrawerDescription>The card is empty.</DrawerDescription>
+            </DrawerHeader>
+            <DrawerFooter>
+              <DrawerClose></DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+      </div>
     </div>
   );
 }
