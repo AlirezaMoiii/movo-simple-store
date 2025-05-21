@@ -5,7 +5,7 @@ import { mainNavLinks } from "./links";
 // lucide icons
 import { ShoppingCart, AlignJustify, X } from "lucide-react";
 
-import CardDrawer from "../../common/CardDrawer";
+import CardDrawer from "../../../common/CardDrawer";
 
 // shadcn
 import {

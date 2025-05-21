@@ -1,18 +1,37 @@
-import Header from "../ui/product/Header"
-import Slider from "../ui/product/Slider"
+import Header from "../ui/product/Header";
+import Slider from "../ui/product/Slider";
 
 import { Heart, Share2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import SeparatorLine from "../ui/common/SeparatorLine";
+
 import { products } from "../lib/placeholder-data";
 
+import { CommentBox } from "../ui/common/CommentBox";
+
+const sampleComment = {
+  id: "1",
+  name: "Ryan Jackson",
+  avatarUrl: "",
+  text: "It's a comment just for test!",
+  date: new Date(Date.now() - 60 * 60 * 1000), // یک ساعت پیش
+  replies: [
+    {
+      id: "2",
+      name: "Melina Rose",
+      text: "Yeah that was awesome.",
+      date: new Date(Date.now() - 30 * 60 * 1000),
+      replies: {
+        id: "2",
+        name: "Melina Rose",
+        text: "Yeah that was awesome.",
+        date: new Date(Date.now() - 30 * 60 * 1000),
+      },
+    },
+  ],
+};
 
 function page() {
   return (
@@ -37,30 +56,40 @@ function page() {
       </div>
 
       <div>
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger className="text-xl">description</AccordionTrigger>
-            <AccordionContent>
-              {products[0].description.map((cont) => (
-                <p key={cont}>- {cont}</p>
-              ))}
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+        <SeparatorLine />
+        <div>
+          <h1 className="text-xl font-bold">Description</h1>
+          <div className="flex flex-col gap-2">
+            {products[0].description.map((des, i) => (
+              <p key={i} className="text-sm">
+                -{des}
+              </p>
+            ))}
+          </div>
+        </div>
 
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-2">
-            <AccordionTrigger className="text-xl">features</AccordionTrigger>
-            <AccordionContent>
-              {products[0].features.map((cont) => (
-                <p key={cont}>- {cont}</p>
-              ))}
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+        <SeparatorLine />
+
+        <div>
+          <h1 className="text-xl font-bold">Features</h1>
+          <div className="flex flex-col gap-2">
+            {products[0].features.map((des, i) => (
+              <p key={i} className="text-sm">
+                -{des}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <SeparatorLine />
+      </div>
+
+      <div>
+        <h1 className="text-xl font-bold">Comments</h1>
+        <CommentBox comment={sampleComment} />
       </div>
     </div>
   );
 }
 
-export default page
+export default page;

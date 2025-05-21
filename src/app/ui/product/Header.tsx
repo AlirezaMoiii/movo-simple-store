@@ -1,10 +1,9 @@
 "use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import StarRating from "../layout/common/StarRating";
+import StarRating from "../common/StarRating";
 
 import { products } from "@/app/lib/placeholder-data";
-
 
 function Header() {
   return (
