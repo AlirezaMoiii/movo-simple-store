@@ -1,3 +1,4 @@
+"use client"
 import Header from "../ui/product/Header";
 import Slider from "../ui/product/Slider";
 
@@ -37,57 +38,62 @@ function page() {
   return (
     <div>
       <Header />
-      <Slider />
-      <div className="flex flex-row justify-between cursor-pointer text-neutral-500">
-        <div className="flex flex-col items-center">
-          <Heart className="!hover:text-red-500" />
-          <span className="text-sm">318381</span>
-        </div>
 
-        <div className=" flex flex-col items-center gap-4">
-          <p className="text-black text-2xl">$2299</p>
-          <Button className="cursor-pointer">Add to card</Button>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <Share2 />
-          <span className="text-sm">83103</span>
-        </div>
-      </div>
-
-      <div>
-        <SeparatorLine />
+      <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
-          <h1 className="text-xl font-bold">Description</h1>
-          <div className="flex flex-col gap-2">
-            {products[0].description.map((des, i) => (
-              <p key={i} className="text-sm">
-                -{des}
-              </p>
-            ))}
+          <Slider />
+          <div className="flex flex-row justify-between cursor-pointer text-neutral-500 md:justify-evenly md:my-6">
+            <div className="flex flex-col items-center">
+              <Heart className="!hover:text-red-500" />
+              <span className="text-sm">318381</span>
+            </div>
+
+            <div className=" flex flex-col items-center gap-4">
+              <p className="text-black text-2xl">$2299</p>
+              <Button className="cursor-pointer">Add to card</Button>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <Share2 />
+              <span className="text-sm">83103</span>
+            </div>
           </div>
         </div>
 
-        <SeparatorLine />
-
         <div>
-          <h1 className="text-xl font-bold">Features</h1>
-          <div className="flex flex-col gap-2">
-            {products[0].features.map((des, i) => (
-              <p key={i} className="text-sm">
-                -{des}
-              </p>
-            ))}
+          <SeparatorLine />
+          <div>
+            <h1 className="text-xl font-bold">Description</h1>
+            <div className="flex flex-col gap-2">
+              {products[0].description.map((des, i) => (
+                <p key={i} className="text-sm">
+                  -{des}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <SeparatorLine />
+          <SeparatorLine />
+
+          <div>
+            <h1 className="text-xl font-bold">Features</h1>
+            <div className="flex flex-col gap-2">
+              {products[0].features.map((des, i) => (
+                <p key={i} className="text-sm">
+                  -{des}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          <SeparatorLine />
+        </div>
       </div>
 
       <div>
         <h1 className="text-xl font-bold">Comments</h1>
-        <CommentBox comment={sampleComment} />
-      </div>
+          <CommentBox comment={sampleComment} />
+        </div>
     </div>
   );
 }

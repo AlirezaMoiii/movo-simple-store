@@ -1,9 +1,9 @@
 "use client"
-import React from "react";
+import React, {useState} from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import {A11y, Pagination, Navigation } from "swiper/modules";
+import {A11y, Pagination, Navigation, Thumbs, FreeMode} from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,10 +20,12 @@ const mobileImgs = [
 ];
 
 function Slider() {
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  
   return (
     <div>
       {/* small screen slider */}
-      <div className="block">
+      <div className="block md:hidden">
         <Swiper
           className="w-[90vw] right-0 my-4"
           modules={[A11y, Pagination, Navigation]}
@@ -40,17 +42,74 @@ function Slider() {
                 <PhotoProvider>
                   <div className="relative w-full h-[30vh] -z-10">
                     <PhotoView src={img.href}>
-                         <Image
-                    src={img.href}
-                    fill
-                    className="object-contain"
-                    alt="slide"
-                  />
+                      <Image
+                        src={img.href}
+                        fill
+                        className="object-contain"
+                        alt="slide"
+                      />
                     </PhotoView>
-               
-                </div>
+                  </div>
                 </PhotoProvider>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+
+      {/* desktop */}
+      <div className="hidden md:block max-w-xl mx-auto">
+        {/* تصویر بزرگ بالا */}
+        <Swiper
+          style={{
+            "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-color": "#fff",
+          }}
+          spaceBetween={10}
+          thumbs={{ swiper: thumbsSwiper }}
+          modules={[FreeMode, Thumbs]}
+          className="mySwiper2"
+        >
+          {mobileImgs.map((img) => {
+            return (
+              <SwiperSlide key={img.name}>
+                <PhotoProvider>
+                  <div className="relative w-full h-[50vh] -z-10">
+                      <Image
+                        src={img.href}
+                        fill
+                        className="object-contain"
+                        alt="slide"
+                      />
+                  </div>
+                </PhotoProvider>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          spaceBetween={0}
+          slidesPerView={3}
+          freeMode={true}
+          watchSlidesProgress={true}
+          modules={[FreeMode, Navigation, Thumbs]}
+          className="mySwiper"
+        >
+          {mobileImgs.map((img) => {
+            return (
+              <SwiperSlide key={img.name}>
+                <PhotoProvider>
+                  <div className="relative w-full h-[10vh] -z-10">
                 
+                      <Image
+                        src={img.href}
+                        fill
+                        className="object-contain"
+                        alt="slide"
+                      />
+                  </div>
+                </PhotoProvider>
               </SwiperSlide>
             );
           })}

@@ -20,6 +20,13 @@ function Header() {
             <p className="text-neutral-500 cursor-pointer">see the store</p>
           </div>
         </div>
+      </div>
+
+      <div className="md:flex md:flex-col md:items-center md:justify-center md:gap-4 ">
+        {/* product description */}
+        <p className="line-clamp-3 text-sm md:max-w-xs md:text-2xl">
+          {products[0].description}
+        </p>
 
         <StarRating
           maxRating={5}
@@ -27,13 +34,6 @@ function Header() {
           color="#fff220"
           onRate={(val) => console.log("امتیاز ثبت شده:", val)}
         />
-      </div>
-
-      <div>{/* rating */}</div>
-
-      <div>
-        {/* product description */}
-        <p className="line-clamp-3 text-sm">{products[0].description}</p>
       </div>
     </div>
   );

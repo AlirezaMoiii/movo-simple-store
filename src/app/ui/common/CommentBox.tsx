@@ -20,7 +20,7 @@ export function CommentBox({ comment }: { comment: CommentType }) {
   const [showReplies, setShowReplies] = useState(true);
 
   return (
-    <div className="space-y-4 border rounded-2xl p-4 shadow-sm bg-white">
+    <div className="space-y-4 border rounded-2xl p-4 shadow-sm bg-white md:max-w-[85vh]">
       <div className="flex items-start gap-3">
         <Avatar className="w-10 h-10">
           <AvatarImage src={comment.avatarUrl} />

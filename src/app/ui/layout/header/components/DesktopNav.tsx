@@ -45,24 +45,7 @@ function DesktopNav() {
         </div>
 
         {/* links */}
-        <NavigationMenu>
-          <NavigationMenuItem>
-            <Link href="/" passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Home
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <NavigationMenuLink>under development..</NavigationMenuLink>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+      
       </div>
 
       <div className="relative">
