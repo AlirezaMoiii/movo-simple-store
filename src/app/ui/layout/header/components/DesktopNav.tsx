@@ -18,17 +18,7 @@ import {
 } from "@/components/ui/drawer";
 
 // shadcn navigation
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 
-import Link from "next/link";
 import Image from "next/image";
 
 function DesktopNav() {

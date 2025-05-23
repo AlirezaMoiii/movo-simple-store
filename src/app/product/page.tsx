@@ -12,7 +12,9 @@ import { products } from "../lib/placeholder-data";
 
 import { CommentBox } from "../ui/common/CommentBox";
 
-const sampleComment = {
+import { CommentType } from "../ui/common/CommentBox";
+
+const sampleComment: CommentType = {
   id: "1",
   name: "Ryan Jackson",
   avatarUrl: "",
@@ -24,12 +26,12 @@ const sampleComment = {
       name: "Melina Rose",
       text: "Yeah that was awesome.",
       date: new Date(Date.now() - 30 * 60 * 1000),
-      replies: {
+      replies: [{
         id: "2",
         name: "Melina Rose",
         text: "Yeah that was awesome.",
         date: new Date(Date.now() - 30 * 60 * 1000),
-      },
+      }],
     },
   ],
 };

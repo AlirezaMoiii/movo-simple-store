@@ -2,6 +2,8 @@
 import React, {useState} from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
+import { Swiper as SwiperClass } from "swiper/types";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import {A11y, Pagination, Navigation, Thumbs, FreeMode} from "swiper/modules";
 
@@ -20,7 +22,7 @@ const mobileImgs = [
 ];
 
 function Slider() {
-  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   
   return (
     <div>
@@ -61,10 +63,6 @@ function Slider() {
       <div className="hidden md:block max-w-xl mx-auto">
         {/* تصویر بزرگ بالا */}
         <Swiper
-          style={{
-            "--swiper-navigation-color": "#fff",
-            "--swiper-pagination-color": "#fff",
-          }}
           spaceBetween={10}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Thumbs]}

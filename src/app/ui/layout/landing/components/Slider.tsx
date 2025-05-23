@@ -46,7 +46,7 @@ export default function Slider() {
         >
           {desktopImgs.map((img) => {
             return (
-              <SwiperSlide key={img.name}>
+              <SwiperSlide key={img.href}>
                 <Image src={img.href} width={1920} height={1080} alt="slide" />
               </SwiperSlide>
             );

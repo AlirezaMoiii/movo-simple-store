@@ -6,7 +6,7 @@ import { MessageCircle, Heart } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { useState } from "react";
 
-type CommentType = {
+export type CommentType = {
   id: string;
   name: string;
   avatarUrl?: string;
