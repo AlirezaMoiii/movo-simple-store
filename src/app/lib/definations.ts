@@ -1,6 +1,6 @@
 //allowObjectTypes
 export type Image = {
-  id: number;
+  id: string;
   url: string;
   alt?: string;
   type: "profile" | "product" | "banner";
@@ -10,7 +10,7 @@ export type Image = {
 };
 
 export type User = {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -21,59 +21,59 @@ export type User = {
 };
 
 export type Categories = {
-  id: number;
+  id: string;
   name: string;
   slug: string;
   created_at?: Date;
-}
+};
 
 export type Product = {
-  id: number;
+  id: string;
   name: string;
   description: string;
   price: number;
   stock: number;
-  category_id: number;
+  category_id?: null | string;
   brand: string;
   created_at?: Date;
   updated_at?: Date;
 };
 
 export type Comment = {
-  id: number;
-  user_id: number;
-  product_id: number;
+  id: string;
+  user_id: string;
+  product_id: string;
   text: string;
   created_at?: Date;
   updated_at?: Date;
 };
 
 export type Like = {
-  id: number;
-  user_id: number;
-  product_id: number;
+  id: string;
+  user_id: string;
+  product_id: string;
   created_at?: Date;
 };
 
 export type Order = {
-  id: number;
-  user_id: number;
+  id: string;
+  user_id: string;
   total_price: number;
   status: "pending" | "paid" | "shipped" | "deliverd" | "canceld";
   created_at?: Date;
 };
 
 export type OrderItem = {
-  id: number;
-  order_id: number;
-  product_id: number;
+  id: string;
+  order_id: string;
+  product_id: string;
   quantity: number;
   price: number;
 };
 
 export type Address = {
-  id: number;
-  user_id: number;
+  id: string;
+  user_id: string;
   address_line: string;
   city: string;
   postal_code: string;
