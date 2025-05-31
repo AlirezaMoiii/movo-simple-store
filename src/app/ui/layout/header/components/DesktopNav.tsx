@@ -20,6 +20,7 @@ import {
 // shadcn navigation
 
 import Image from "next/image";
+import SearchInput from "@/app/ui/common/SearchInput";
 
 function DesktopNav() {
   return (
@@ -39,10 +40,7 @@ function DesktopNav() {
       </div>
 
       <div className="relative">
-        <Input
-          placeholder="search.."
-          className="md:w-[42vw] xl:w-[25vw] xl:-ml-32 !outline-none"
-        />
+      <SearchInput className="w-[35vw] xl:w-[30vw]"/>
         <Search className="absolute top-1/2 -translate-y-1/2 right-1 size-4 text-neutral-500" />
       </div>
 

@@ -7,6 +7,8 @@ import { ShoppingCart, AlignJustify, X } from "lucide-react";
 
 import CardDrawer from "../../../common/CardDrawer";
 
+import SearchInput from "@/app/ui/common/SearchInput";
+
 // shadcn
 import {
   Drawer,
@@ -37,7 +39,7 @@ function MobileNav() {
                 <X />
               </DrawerClose>
               <DrawerDescription>
-                <Input className="mt-2" placeholder="search..." />
+                <SearchInput />
 
                 <ul className="mt-8 flex flex-col gap-4">
                   {mainNavLinks.map((link) => {
