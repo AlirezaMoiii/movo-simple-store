@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
-import { Input } from "@/components/ui/input";
 
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
-
+import { useSearchParams, useRouter } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
+import { checkReferrer } from "@/app/lib/utils";
+import { Input } from "@/components/ui/input";
 
 function SearchInput({
   className = "",
@@ -13,7 +12,6 @@ function SearchInput({
   className?: string;
   placeHolder?: string;
 }) {
-  const pathName = usePathname();
   const searchParams = useSearchParams();
   const { replace, back } = useRouter();
 
@@ -25,16 +23,12 @@ function SearchInput({
     if (term.length >= 3) {
       params.set("q", term);
       replace(`/search?${params.toString()}`);
-
     } else {
       params.delete("q");
-      if (
-        document.referrer &&
-        new URL(document.referrer).origin === window.location.origin
-      ) {
-        back(); // از داخل سایت اومده، برگرد عقب
+      if (checkReferrer()) {
+        back();
       } else {
-        replace("/"); // از بیرون اومده، برش گردون به هوم
+        replace("/");
       }
     }
   }, 100);
@@ -46,8 +40,6 @@ function SearchInput({
         placeholder={placeHolder}
         defaultValue={searchParams.get("q")?.toString()}
       />
-
-      
     </div>
   );
 }

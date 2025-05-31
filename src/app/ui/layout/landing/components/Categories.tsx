@@ -24,7 +24,7 @@ function Categories() {
             </CardHeader>
             <CardContent className="relative w-36 h-36 z-10 flex items-center justify-center w-full">
               <Image
-                src={cat.img}
+                src="https://lb822zgtkz.ufs.sh/f/pcF4wu0lx1e34A9KXtyIqvxRhQojGdZMlkT5Az9asB7VDPJS"
                 fill
                 className="object-contain"
                 alt={`${cat.title} image`}
