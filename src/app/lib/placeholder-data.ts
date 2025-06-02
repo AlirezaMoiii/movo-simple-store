@@ -33,7 +33,7 @@ export const users: User[] = [
   },
 ];
 
-export const products: Product[] = [
+export const productss: Product[] = [
   {
     id: uuids[1],
     name: "Mac book pro 2023",
@@ -100,7 +100,7 @@ export const addresses: Address[] = [
   },
 ];
 
-export const productss = [
+export const products = [
   {
     id: "B0C123456X",
     title:

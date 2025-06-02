@@ -1,18 +1,18 @@
-"use client"
-import Header from "../ui/product/Header";
-import Slider from "../ui/product/Slider";
+"use client";
+import Header from "../../ui/product/Header";
+import Slider from "../../ui/product/Slider";
 
 import { Heart, Share2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import SeparatorLine from "../ui/common/SeparatorLine";
+import SeparatorLine from "../../ui/common/SeparatorLine";
 
-import { products } from "../lib/placeholder-data";
+import { products } from "../../lib/placeholder-data";
 
-import { CommentBox } from "../ui/common/CommentBox";
+import { CommentBox } from "../../ui/common/CommentBox";
 
-import { CommentType } from "../ui/common/CommentBox";
+import { CommentType } from "../../ui/common/CommentBox";
 
 const sampleComment: CommentType = {
   id: "1",
@@ -26,21 +26,30 @@ const sampleComment: CommentType = {
       name: "Melina Rose",
       text: "Yeah that was awesome.",
       date: new Date(Date.now() - 30 * 60 * 1000),
-      replies: [{
-        id: "2",
-        name: "Melina Rose",
-        text: "Yeah that was awesome.",
-        date: new Date(Date.now() - 30 * 60 * 1000),
-      }],
+      replies: [
+        {
+          id: "2",
+          name: "Melina Rose",
+          text: "Yeah that was awesome.",
+          date: new Date(Date.now() - 30 * 60 * 1000),
+        },
+      ],
     },
   ],
 };
 
-function page() {
+type Params = Promise<{
+  id: string;
+}>
+
+async function page(props: {params: Params}) {
+  const params = await props.params;
+  const id = params.id;
+
   return (
     <div>
       <Header />
-
+      <h1>{id}</h1>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
           <Slider />
@@ -94,8 +103,8 @@ function page() {
 
       <div>
         <h1 className="text-xl font-bold">Comments</h1>
-          <CommentBox comment={sampleComment} />
-        </div>
+        <CommentBox comment={sampleComment} />
+      </div>
     </div>
   );
 }

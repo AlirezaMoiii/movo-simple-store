@@ -24,7 +24,7 @@ function Header({ query }: { query: string }) {
 
   return (
     <div className="flex flex-row w-full items-center justify-between">
-      <MoveLeft onClick={handleBack} />
+      <MoveLeft onClick={handleBack} className="cursor-pointer"/>
       <p>results for: {query}</p>
 
       <div className="block md:hidden">

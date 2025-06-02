@@ -1,7 +1,7 @@
+import SideBar from "../ui/search/SideBar";
+import SearchPagination from "../ui/search/SearchPagination";
 
-import SideBar from "../ui/search/SideBar"
-
-function layout({children}: {children: React.ReactNode}) {
+function layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <div className="flex flex-row gap-4">
@@ -10,8 +10,9 @@ function layout({children}: {children: React.ReactNode}) {
         </div>
         {children}
       </div>
+      <SearchPagination />
     </div>
   );
 }
 
-export default layout
+export default layout;
