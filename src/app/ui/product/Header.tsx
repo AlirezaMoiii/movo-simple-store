@@ -5,7 +5,7 @@ import StarRating from "../common/StarRating";
 
 import { products } from "@/app/lib/placeholder-data";
 
-function Header() {
+function Header(props: {title: string}) {
   return (
     <div className="mt-4 flex flex-col gap-1.5">
       <div className="flex flex-row justify-between items-center">
@@ -25,7 +25,7 @@ function Header() {
       <div className="md:flex md:flex-col md:items-center md:justify-center md:gap-4 ">
         {/* product description */}
         <p className="line-clamp-3 text-sm md:max-w-xs md:text-2xl">
-          {products[0].description}
+          {props.title}
         </p>
 
         <StarRating

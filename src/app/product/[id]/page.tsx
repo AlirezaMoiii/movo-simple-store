@@ -1,4 +1,3 @@
-"use client";
 import Header from "../../ui/product/Header";
 import Slider from "../../ui/product/Slider";
 
@@ -13,6 +12,7 @@ import { products } from "../../lib/placeholder-data";
 import { CommentBox } from "../../ui/common/CommentBox";
 
 import { CommentType } from "../../ui/common/CommentBox";
+import { fetchProductByID, fetchProductComments, fetchProductImages, fetchProductLikeCount } from "@/app/lib/data";
 
 const sampleComment: CommentType = {
   id: "1",
@@ -45,22 +45,28 @@ type Params = Promise<{
 async function page(props: {params: Params}) {
   const params = await props.params;
   const id = params.id;
+  const [product, comments, likes] = await Promise.all([
+    fetchProductByID(id),
+    fetchProductComments(id),
+    fetchProductLikeCount(id),
+])
 
+console.log(comments)
+  
   return (
     <div>
-      <Header />
-      <h1>{id}</h1>
+      <Header title={product.name}/>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
           <Slider />
           <div className="flex flex-row justify-between cursor-pointer text-neutral-500 md:justify-evenly md:my-6">
             <div className="flex flex-col items-center">
               <Heart className="!hover:text-red-500" />
-              <span className="text-sm">318381</span>
+              <span className="text-sm">{likes}</span>
             </div>
 
             <div className=" flex flex-col items-center gap-4">
-              <p className="text-black text-2xl">$2299</p>
+              <p className="text-black text-2xl">${product.price}</p>
               <Button className="cursor-pointer">Add to card</Button>
             </div>
 
@@ -75,13 +81,7 @@ async function page(props: {params: Params}) {
           <SeparatorLine />
           <div>
             <h1 className="text-xl font-bold">Description</h1>
-            <div className="flex flex-col gap-2">
-              {products[0].description.map((des, i) => (
-                <p key={i} className="text-sm">
-                  -{des}
-                </p>
-              ))}
-            </div>
+            <div className="flex flex-col gap-2">{product.description}</div>
           </div>
 
           <SeparatorLine />
@@ -103,7 +103,12 @@ async function page(props: {params: Params}) {
 
       <div>
         <h1 className="text-xl font-bold">Comments</h1>
-        <CommentBox comment={sampleComment} />
+        {
+          comments.length ?  <CommentBox comment={sampleComment} /> 
+          :
+          <h1>No comments yet!</h1>
+        }
+       
       </div>
     </div>
   );
