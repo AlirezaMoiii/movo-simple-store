@@ -1,18 +1,22 @@
-import Header from "../../ui/product/Header";
-import Slider from "../../ui/product/Slider";
+import Header from "../../../ui/product/Header";
+import Slider from "../../../ui/product/Slider";
 
 import { Heart, Share2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import SeparatorLine from "../../ui/common/SeparatorLine";
+import SeparatorLine from "../../../ui/common/SeparatorLine";
 
-import { products } from "../../lib/placeholder-data";
+import { products } from "../../../lib/placeholder-data";
 
-import { CommentBox } from "../../ui/common/CommentBox";
+import { CommentBox } from "../../../ui/common/CommentBox";
 
-import { CommentType } from "../../ui/common/CommentBox";
-import { fetchProductByID, fetchProductComments, fetchProductImages, fetchProductLikeCount } from "@/app/lib/data";
+import { CommentType } from "../../../ui/common/CommentBox";
+import {
+  fetchProductByID,
+  fetchProductComments,
+  fetchProductLikeCount,
+} from "@/app/lib/data";
 
 const sampleComment: CommentType = {
   id: "1",
@@ -40,22 +44,22 @@ const sampleComment: CommentType = {
 
 type Params = Promise<{
   id: string;
-}>
+}>;
 
-async function page(props: {params: Params}) {
+async function page(props: { params: Params }) {
   const params = await props.params;
   const id = params.id;
   const [product, comments, likes] = await Promise.all([
     fetchProductByID(id),
     fetchProductComments(id),
     fetchProductLikeCount(id),
-])
+  ]);
 
-console.log(comments)
-  
+  console.log(comments);
+
   return (
     <div>
-      <Header title={product.name}/>
+      <Header title={product.name} />
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
           <Slider />
@@ -103,12 +107,11 @@ console.log(comments)
 
       <div>
         <h1 className="text-xl font-bold">Comments</h1>
-        {
-          comments.length ?  <CommentBox comment={sampleComment} /> 
-          :
+        {comments.length ? (
+          <CommentBox comment={sampleComment} />
+        ) : (
           <h1>No comments yet!</h1>
-        }
-       
+        )}
       </div>
     </div>
   );

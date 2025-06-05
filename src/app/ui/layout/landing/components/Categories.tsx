@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 
 import Image from "next/image";
+
 function Categories() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 z-30 w-[90vw] -mx-24 mt-48 -mb-24">

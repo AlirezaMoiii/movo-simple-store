@@ -3,9 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "react-photo-view/dist/react-photo-view.css";
 
-import Header from "./ui/layout/header/Header";
-import Footer from "./ui/layout/footer/Footer";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,9 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased !p-2 flex flex-col gap-4`}
       >
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
-import SideBar from "../ui/search/SideBar";
-import SearchPagination from "../ui/search/SearchPagination";
+import SideBar from "../../ui/search/SideBar";
+import SearchPagination from "../../ui/search/SearchPagination";
 
 function layout({ children }: { children: React.ReactNode }) {
   return (

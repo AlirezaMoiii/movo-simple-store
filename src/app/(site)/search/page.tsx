@@ -1,6 +1,6 @@
-import { fetchSearchResults } from "../lib/data";
-import Header from "../ui/search/Header";
-import ProductCard from "../ui/common/ProductCard";
+import { fetchSearchResults } from "../../lib/data";
+import Header from "../../ui/search/Header";
+import ProductCard from "../../ui/common/ProductCard";
 
 type PageProps = {
   searchParams?: {

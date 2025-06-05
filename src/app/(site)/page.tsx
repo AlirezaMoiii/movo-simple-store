@@ -1,5 +1,5 @@
-import Slider from "./ui/layout/landing/components/Slider";
-import Categories from "./ui/layout/landing/components/Categories";
+import Slider from "../ui/layout/landing/components/Slider";
+import Categories from "../ui/layout/landing/components/Categories";
 
 export default function Home() {
   return (
