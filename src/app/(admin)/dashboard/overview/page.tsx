@@ -1,8 +1,12 @@
-import React from 'react'
+import SellChart from "@/app/ui/dashboard/overview/SellChart"
+import Statistics from "@/app/ui/dashboard/overview/Statistics"
 
 function page() {
   return (
-    <div>overview</div>
+    <div className="w-full">
+      <Statistics />
+      <SellChart />
+    </div>
   )
 }
 

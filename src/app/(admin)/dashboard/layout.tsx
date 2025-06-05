@@ -15,7 +15,7 @@ async function layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider defaultOpen={defaultOpen}>
       <AppSidebar />
-      <div className="hidden md:block">
+      <div className="hidden md:block w-full">
         <SidebarTrigger />
         {children}
       </div>
